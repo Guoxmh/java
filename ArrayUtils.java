@@ -23,9 +23,8 @@ public class ArrayUtils{
 	//1.计算数组中最大指
 	public static int arryMaxElement(int[] date){
 		int[] tmpArray = new int[date.length];
-		for(int i = 0; i < date.length;i++){
-			tmpArray[i] = date[i];
-		}
+
+		System.arraycopy(date,0,tmpArray,0,date.length);
 		java.util.Arrays.sort(tmpArray);
 		System.out.print("原数组最大值是");
 		System.out.println(tmpArray[tmpArray.length-1]);
@@ -34,9 +33,7 @@ public class ArrayUtils{
     //2.计算数组中最小值
     public static int arrayMinElement(int[] date){
 		int[] tmpArray = new int[date.length];
-		for(int i = 0; i < date.length;i++){
-			tmpArray[i] = date[i];
-		}
+		System.arraycopy(date,0,tmpArray,0,date.length);
        java.util.Arrays.sort(tmpArray);
 		System.out.print("原数组最小值是");
 		System.out.println(tmpArray[0]);
@@ -57,9 +54,7 @@ public class ArrayUtils{
     public static int[] arrayJoin(int[] a, int[] b){
 		
 	 int[] tmpArray = new int[a.length];
-		for(int i = 0; i < a.length;i++){
-			tmpArray[i] = a[i];
-		}
+		System.arraycopy(a,0,tmpArray,0,a.length);
 	   tmpArray = Arrays.copyOf(tmpArray,(tmpArray.length+b.length));
        System.arraycopy(b,0,tmpArray,a.length,b.length);
 	   System.out.print("两数组拼接后");
@@ -71,10 +66,11 @@ public class ArrayUtils{
     public static int[] arraySub(int[] date, int start , int end){
        int[] tmpArray = new int[end-start];
 	   int j = 0;
-		for(int i = start; i < end;i++){
+		/*for(int i = start; i < end;i++){
 			tmpArray[j] = date[i];
 			j++;
-		}
+		}*/
+		System.arraycopy(date,start,tmpArray,0,end-start);
 		printArray(tmpArray);
         return null;
     }
