@@ -1,25 +1,5 @@
 import java.util.Arrays;
-
 public class ArrayUtils{
-	
-	public static void main(String[] args){
-		int[] date = new int[]{1,24,34,45,5,6};
-		int[] dest = new int[]{77,44,44,5,5};
-		System.out.print("原数组date是 ");
-		 printArray(date);
-		 System.out.print("目标数组dest是 ");
-		 printArray(dest);
-		 arryMaxElement(date);
-		 arrayMinElement(date);
-		 arrayElementSum(date);
-		 arrayJoin(date, dest);
-		  System.out.print("start = 2 ;  end = 5  输出是  ");
-		 arraySub( date, 2 , 5);
-		  System.out.print("反转原数组后 ");
-		 printReversal(date);
-		 
-		
-	}
 	//1.计算数组中最大指
 	public static int arryMaxElement(int[] date){
 		int[] tmpArray = new int[date.length];
@@ -46,8 +26,7 @@ public class ArrayUtils{
 			sum += date[i];
 		}
 		System.out.print("原数组和是");
-		System.out.println(sum);
-			
+		System.out.println(sum);		
         return -1;
     }
     //4.数组拼接
@@ -90,7 +69,24 @@ public class ArrayUtils{
 			tmpArray[date.length-i-1] = date[i];
 		}
 		 printArray(tmpArray);
-		
     }
+	
+    public static void main(String[] args){
+		int[] date = new int[]{1,24,34,45,5,6};
+		int[] dest = new int[]{77,44,44,5,5};
+		System.out.print("原数组date是 ");
+		 printArray(date);
+		 System.out.print("目标数组dest是 ");
+		 printArray(dest);
+		 arryMaxElement(date);
+		 arrayMinElement(date);
+		 arrayElementSum(date);
+		 arrayJoin(date, dest);
+		  System.out.print("start = 2 ;  end = 5  输出是  ");
+		 arraySub( date, 2 , 5);
+		  System.out.print("反转原数组后 ");
+		 printReversal(date);	
+	}
+	
 
 }
