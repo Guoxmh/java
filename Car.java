@@ -24,7 +24,7 @@ public class Car{
 		 }
 	 }
 	public  void get(){
-		System.out.println("牌子  "+brand+"驾驶模式");
+		System.out.println("牌子  "+brand);
 	}
 
 
