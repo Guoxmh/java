@@ -1,8 +1,8 @@
 public class PrintReceipt{
      public static void  main(String[] args){
-		 Receipt  commodities = new Receipt("T",2);
+		 //Receipt  commodities = new Receipt("T",2);
 		 
-		 Receipt.Money  price = new Receipt("T恤",2,"T恤",1,"网球拍",1).new Money(15000);
+		 Receipt.Money  price = new Receipt("网球拍",7,"T恤",1,"网球拍",1).new Money(1500000,0.7F);
 		 price.print();
 	 }
 }
@@ -78,12 +78,16 @@ class  Receipt{
 	
 	class  Money{
 		private int totalPrice;
-		float dic = 0.8F;
-		public Money(int totalPrice){
+		private float dic;
+		public Money(int totalPrice,float dic){
 			this.totalPrice = totalPrice;
+			this.dic = dic;
 		}
 		public int getMoney(){
 			return this.totalPrice;
+		}
+		public float getDic(){
+			return this.dic;
 		}
 		public void print(){
 			int b = 0;
@@ -101,13 +105,13 @@ class  Receipt{
 		     else if(C == "网球鞋") d = amountA*priceSandShoe;
 					else  if(C == "网球拍")  d = amountA*priceTennisRacquest;
 			int  a =  b+c+d;
-			System.out.println("折扣：8折");
-		System.out.println("消费总金额  "+"￥"+a*dic);
+			System.out.println("折扣："+ (int)(10*this.dic)+"折");
+		System.out.println("消费总金额  "+"￥"+a*this.dic);
 		System.out.println("实际交费   ￥"+this.totalPrice);
 		
-		System.out.println("找钱    ￥"+(this.totalPrice-a*dic));
+		System.out.println("找钱    ￥"+(this.totalPrice-a*this.dic));
 						   
-		System.out.println("本次所获得的积分是"+(int)(a*0.03));
+		System.out.println("本次所获得的积分是"+(int)(a*this.dic*0.03));
 		}
 		
 
