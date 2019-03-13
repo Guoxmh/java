@@ -2,7 +2,7 @@ public class PrintReceipt{
      public static void  main(String[] args){
 		 //Receipt  commodities = new Receipt("T",2);
 		 
-		 Receipt.Money  price = new Receipt("网球拍",7,"T恤",1,"网球拍",1).new Money(1500000,0.7F);
+		 Receipt.Money  price = new Receipt("网球拍",7).new Money(1500000,0.7F);
 		 price.print();
 	 }
 }
@@ -25,7 +25,7 @@ class  Receipt{
 		System.out.println("************消费单**************");
 		System.out.println("名单"+"\t"+"单价"+"\t"+"个数"+"\t"+"金额");
 	}
-	
+	//开始重载构造方法，构造方法重载是在一个类中.迥异于覆写
 	public Receipt(String A,int amountA){
 		this();
 		this.A = A;
