@@ -1,6 +1,6 @@
 public class UpDown{
 	public static void main(String[] args){
-		fun(new Person());
+	
 		fun(new Student());
 	}
 	
@@ -9,10 +9,9 @@ public static void fun(Person per){
 }
 }
 
-class Person{
-	public void print(){
-		System.out.println("Person类");
-	}
+abstract class Person{
+	public abstract void print();
+
 }
 
 class  Student extends Person{
