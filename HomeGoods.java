@@ -67,7 +67,7 @@ class Order{
 		  .append("花费").append(getTotal()).append("\n")
 		  .append("z找零").append(this.pay -getTotal() );
 		
-		return sb.toString();
+		return sb.toString() ;
 
 	}
 	
