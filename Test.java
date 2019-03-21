@@ -1,8 +1,9 @@
-package  www.bit.java.test;
-import www.bit.java.util.Message7;
-public class  Test{
+package www.bit.java.test;
+import www.bit.java.test.Message;
+public class Test{
 	public static void main(String[] args){
-		Message7 message = new Message7();
+		Message message = new Message();
 		message.print();
 	}
+
 }
