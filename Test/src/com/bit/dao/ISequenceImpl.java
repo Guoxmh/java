@@ -2,6 +2,7 @@ package com.bit.dao;
 
 import com.bit.impl.ISequence;
 
+
 import java.util.Arrays;
 
 public class ISequenceImpl implements ISequence {
@@ -112,3 +113,4 @@ public class ISequenceImpl implements ISequence {
         this.usedSize = 0;
     }
 }
+

@@ -1,13 +1,52 @@
 package main;
 
+import com.bit.dao.DoubleLinkedImple;
 import com.bit.dao.ISequenceImpl;
 import com.bit.dao.MySingleListImpl;
 import com.bit.impl.ISequence;
 import com.bit.impl.Ilinked;
 
+import static java.lang.Integer.parseInt;
+
 //包名全部小写
 public class testmain {
     public static void main(String[] args) {
+        DoubleLinkedImple abs = new DoubleLinkedImple();
+
+        Integer num1 = new Integer(10) ;
+        Integer num2 = new Integer(10) ;
+        System.out.println(num1 == num2);
+        System.out.println(num1 == new Integer(10));
+        System.out.println(num1.equals(new Integer(10)));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*        String str = "Hello Bit";
+        System.out.println(str);
+        String str1 = new String("Hello Bit");*/
+        //"Hell0" 本质就是匿名的String类的对象，匿名对象一定保存在堆内存中
+        //String str = "hello" 本质就是给匿名的String类对象设置有名字
+        //在日后的开发中，如果要判断用户输入的字符串是否等同于特定的字符串，
+        //一定要  用户输入.equals("字符串")； 防止用户没有输入内容，造成
+        //空指针问题；
+    }
+
+    public static void main2(String[] args) {
         MySingleListImpl  abs = new MySingleListImpl();
         abs.addFirst(18);
         abs.addFirst(8);
@@ -20,6 +59,7 @@ public class testmain {
         System.out.println();
         abs.remove(0);
         abs.remove(1);
+        abs.remove(10);
         abs.remove(9);
         abs.display();//2
         System.out.println();
@@ -33,6 +73,9 @@ public class testmain {
         int a = abs.getLength();
         System.out.println("-----------");
         System.out.println(a);
+        System.out.println("-----------如果打印抛出异常则clear()成功");
+        abs.clear();
+        abs.display();
     }
     public static void main1(String[] args) {
         ISequenceImpl abs = new ISequenceImpl();

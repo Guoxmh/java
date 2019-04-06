@@ -17,6 +17,7 @@ public class MySingleListImpl implements Ilinked{
      }
      private Node head;
      public MySingleListImpl(){
+
          this.head = null;
      }
      private Node searchLast(Node head){
@@ -108,7 +109,7 @@ public class MySingleListImpl implements Ilinked{
     public int remove(int key) {
          boolean abs = contains(key);
          if(abs){
-             if(key == this.head.data){
+             if(key == this.head.data){//独立出来 头 单独处理
                  this.head = this.head.next;
                  return 1000;//删除成功给一千；
              }
@@ -116,8 +117,8 @@ public class MySingleListImpl implements Ilinked{
              if(cur == null){
                  throw new NullPointerException("空指针问题");
              }
-              if(cur.next == null){
-               cur = null;
+              if(cur.next.next == null){
+               cur.next = null;
                return 1000;
              }else{
                  cur.next = cur.next.next;
@@ -161,9 +162,11 @@ public class MySingleListImpl implements Ilinked{
 
     @Override
     public void clear() {
-         Node cur = this.head;
-         while(cur != null ){
-
+         Node cur ;
+         while(this.head != null){
+             cur = this.head;
+             this.head = null;
+             this.head = cur.next;
          }
 
     }
