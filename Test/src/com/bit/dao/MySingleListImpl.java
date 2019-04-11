@@ -39,7 +39,7 @@ public class MySingleListImpl implements Ilinked{
          return cur;
      }
 
-     private Node searchKey(int key){
+     private Node searchPre(int key){
          Node cur = this.head;
          Node cur1 = cur;
          while(cur != null){
@@ -51,6 +51,16 @@ public class MySingleListImpl implements Ilinked{
          }
 
          return  null;
+         /* if(cur.next == null){
+               return this.head;
+         }
+            while(cur.next != null){
+            if(key == cur.next.data){
+                return cur;
+            }
+            cur = cur.next;
+        }
+        return null;*/
      }
 
     @Override
@@ -113,7 +123,7 @@ public class MySingleListImpl implements Ilinked{
                  this.head = this.head.next;
                  return 1000;//删除成功给一千；
              }
-             Node cur = searchKey(key);
+             Node cur = searchPre(key);
              if(cur == null){
                  throw new NullPointerException("空指针问题");
              }
@@ -129,8 +139,25 @@ public class MySingleListImpl implements Ilinked{
 
     @Override
     public void removeAllKey(int key) {
+/*
          while(contains(key)){
              remove(key);
+         }
+*/
+         Node pre = this.head;
+         Node cur = this.head.next;
+         while(cur != null){
+             if(cur.data == key){
+                 pre.next = cur.next;
+                 cur = cur.next;
+             }else{
+                 pre = cur;
+                 cur =cur.next;
+
+             }
+         }
+         if(this.head.data ==  key){
+             this.head = this.head.next;
          }
 
     }
@@ -164,12 +191,78 @@ public class MySingleListImpl implements Ilinked{
     public void clear() {
          Node cur ;
          while(this.head != null){
-             cur = this.head;
+             cur = this.head.next;
              this.head = null;
-             this.head = cur.next;
+             this.head = cur;
          }
 
     }
+    public Node middleNode(Node head){
+        Node cur =  head;
+        int middle = getLength()/2;
+        for(int i = 0; i < middle; i++,cur = cur.next);
+        return cur;
+    }
+    public   Node FindKthToTail(Node head,int k){
+         Node cur = head;
+         Node fast = null;
+         Node slow = null;
+         int count= 0;
+         while(cur != null){
+             count++;
+             cur = cur.next;
+         }
+
+         if(fast == null || k <= 0 || k > count){
+             return null;
+         }
+         cur = head;
+
+         for(int i = 0; i < k - 1; cur = cur.next,i++);
+         fast = cur;
+         while(fast != null){
+             fast = fast.next;
+             slow = slow.next;
+         }
+         return slow;
+
+
+    }
+    public   Node dada(int k){
+         Node aS = null;
+         Node aE = null;
+         Node bS = null;
+         Node bE = null;
+         Node pHead = head;
+         while(pHead != null){
+             Node pHeadNext = pHead.next;
+             pHead.next = null;
+
+             if(pHead.data < k){
+                 if(pHead == null){
+                     aS  = pHead;
+                     aE = pHead.next;
+                 }else{
+                     aE.next = pHead;
+                     aE = pHead.next;
+                 }
+             }else{
+                 if(pHead == null){
+                     bS  = pHead;
+                     bE = pHead;
+                 }else{
+                     bE.next = pHead;
+                     bE = pHead;
+                 }
+             }
+             pHead = pHeadNext;
+         }
+        aE.next = bS;
+
+         return  aE;
+    }
+
+
 }
 
 
@@ -290,3 +383,6 @@ public class MySingleListImpl implements Ilinked {
 
 }
 */
+
+
+

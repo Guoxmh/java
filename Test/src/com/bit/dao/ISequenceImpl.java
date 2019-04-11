@@ -86,7 +86,7 @@ public class ISequenceImpl implements ISequence {
         for(int i = index; i < this.usedSize; i++){
             this.elemData[i] = this.elemData[i+1];
         }
-        this.elemData[usedSize] = null;
+        this.elemData[usedSize-1] = null;
         this.usedSize--;
         return OldValue;
     }
