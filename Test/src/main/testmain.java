@@ -10,7 +10,7 @@ import static java.lang.Integer.parseInt;
 
 //包名全部小写
 public class testmain {
-    public static void main(String[] args) {
+    public static void main5(String[] args) {
         DoubleLinkedImple abs = new DoubleLinkedImple();
 
         Integer num1 = new Integer(10) ;
@@ -18,20 +18,6 @@ public class testmain {
         System.out.println(num1 == num2);
         System.out.println(num1 == new Integer(10));
         System.out.println(num1.equals(new Integer(10)));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -46,7 +32,7 @@ public class testmain {
         //空指针问题；
     }
 
-    public static void main2(String[] args) {
+    public static void main(String[] args) {
         MySingleListImpl  abs = new MySingleListImpl();
         abs.addFirst(18);
         abs.addFirst(8);
@@ -57,11 +43,11 @@ public class testmain {
         abs.addindex(5,9);
         abs.display();//1
         System.out.println();
-        abs.remove(0);
+/*        abs.remove(0);
         abs.remove(1);
         abs.remove(10);
         abs.remove(9);
-        abs.display();//2
+        abs.display();//2*/
         System.out.println();
         abs.removeAllKey(8);
         abs.display();
@@ -73,9 +59,7 @@ public class testmain {
         int a = abs.getLength();
         System.out.println("-----------");
         System.out.println(a);
-        System.out.println("-----------如果打印抛出异常则clear()成功");
         abs.clear();
-        abs.display();
     }
     public static void main1(String[] args) {
         ISequenceImpl abs = new ISequenceImpl();
@@ -109,3 +93,8 @@ public class testmain {
     }
 
 }
+
+
+
+
+
